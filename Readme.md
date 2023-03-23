@@ -11,7 +11,7 @@ String string1 = "a";
 string1 = "b";
 ```
 
-Have we change an immutable value?
+Have we change an immutable object?
 No, we have only changed the reference of the String object.
 
 Why is this possible ? 
