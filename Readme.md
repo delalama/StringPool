@@ -15,13 +15,14 @@ Have we change an immutable object?
 No, we have only changed the reference of the String object.
 
 Why is this possible ? 
-It's possible because the JVM has created 3 immutable String objects.
+It's possible because the JVM has created 2 immutable literal strings
+and 1 String object
 
 1 - "a"
 
 2 - "b"
 
-3 - string1 (copy of "b")
+3 - string1
 
 Instance "string1" has changed its reference from "a" reference to "b" reference.
 
