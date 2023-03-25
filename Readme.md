@@ -12,21 +12,21 @@ string1 = "b";
 ```
 
 Have we change an immutable object?
-No, we have only changed the reference of the String object.
+No, we have only changed the reference of a variable.
 
 Why is this possible ? 
-It's possible because the JVM has created 2 immutable literal strings
+It's possible because the JVM has created 2 immutable strings instances and 1 variable
 and 1 String object
 
-1 - "a"
+1 - "a" // instances
 
-2 - "b"
+2 - "b" // instances
 
-3 - string1
+3 - string1 // variable
 
-Instance "string1" has changed its reference from "a" reference to "b" reference.
+Variable "string1" has changed its reference from "a" to "b".
 
-So don't confuse String Objects with String literals.
+So don't confuse String variables with String instances.
 
 ```java
 
@@ -79,14 +79,16 @@ map.add(d);  // size = 1 !!!  WTF!!!
 
 ```
 
-LinkedHashSet has a HashMap to store elements
+LinkedHashSet class has a HashMap object to store elements, across this method:
   
-map.put uses
+map.put 
+And inside the implementatino we can find:
 
 ```java
 key.equals(k)
   ```
-to check non repeated values are added to the map.
+This method is used to find repeated String values.
 
-So I think that is correctly explained why String is an
-immutable class.
+So it does not mind how many different variables we declare, all variables that has
+the same value will share their reference, end of story.
+
